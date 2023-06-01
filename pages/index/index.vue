@@ -22,7 +22,7 @@
 			</div>
 		</section>
 
-		<section class="ranking_container">
+		<section class="ranking_container" v-if="rankingList.length">
 			<svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
 				p-id="2411" width="32" height="32" @click="openRanking=!openRanking">
 				<path
@@ -58,138 +58,13 @@ export default {
 			signedDays: 0, // 已签到天数
 			signed: false, // 签到状态
 			openRanking: false, // 排行榜打开状态
-			rankingList: [
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅1111",
-					open_id: "cf689de4a888f593f083c801109370293",
-				},
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅111",
-					open_id: "cf689de4a888f593f0833c80109370293",
-				},
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅11",
-					open_id: "cf689de4a888f5593f083c80109370293",
-				},
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅1",
-					open_id: "cf689de4a888f593f083c860109370293",
-				},
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅1",
-					open_id: "cf689de4a888f593f083c860109370293",
-				},
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅1",
-					open_id: "cf689de4a888f593f083c860109370293",
-				},
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅1",
-					open_id: "cf689de4a888f593f083c860109370293",
-				},
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅1",
-					open_id: "cf689de4a888f593f083c860109370293",
-				},
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅1",
-					open_id: "cf689de4a888f593f083c860109370293",
-				},
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅1",
-					open_id: "cf689de4a888f593f083c860109370293",
-				},
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅1",
-					open_id: "cf689de4a888f593f083c860109370293",
-				},
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅1",
-					open_id: "cf689de4a888f593f083c860109370293",
-				},
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅1",
-					open_id: "cf689de4a888f593f083c860109370293",
-				},
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅1",
-					open_id: "cf689de4a888f593f083c860109370293",
-				},
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅1",
-					open_id: "cf689de4a888f593f083c860109370293",
-				},
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅1",
-					open_id: "cf689de4a888f593f083c860109370293",
-				},
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅1",
-					open_id: "cf689de4a888f593f083c860109370293",
-				},
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅1",
-					open_id: "cf689de4a888f593f083c860109370293",
-				},
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅1",
-					open_id: "cf689de4a888f593f083c860109370293",
-				},
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅1",
-					open_id: "cf689de4a888f593f083c860109370293",
-				},
-				{
-					avatar: "https://res.u-tools.cn/assets/avatars/jeih9vspcn9iumdh.png",
-					member: 0,
-					nickname: "一个肥宅1",
-					open_id: "cf689de4a888f593f083c860109370293",
-				},
-			],
+			rankingList: [],
+			userInfo: {}, // 用户信息
 		}
 	},
-	onLoad () {
 
+	onLoad () {
+		this.getUserInfo();
 	},
 
 	computed: {
@@ -199,12 +74,15 @@ export default {
 	},
 
 	methods: {
+		getUserInfo() {
+			window.getUserInfo((userInfo) => {
+				this.userInfo = userInfo;
+			})
+		},
+
 		async handleSignIn () {
 			// this.signed = true;
 			this.signed = !this.signed;
-			window.getUserInfo((res) => {
-				console.log('res::: ', res);
-			})
 		}
 	}
 }
