@@ -1,0 +1,12 @@
+{
+	"main": "http://localhost:5173",
+	"preload": "preload.js",
+	"logo": "./logo.png",
+	"features": [
+		{
+			"code": "sign",
+			"explain": "让坚持变得简单",
+			"cmds":["签到", "sign in"]
+		}
+	]
+}
