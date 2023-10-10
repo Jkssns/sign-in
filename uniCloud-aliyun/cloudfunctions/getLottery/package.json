@@ -1,0 +1,22 @@
+{
+ "name": "getLottery",
+ "dependencies": {
+  "form-data": "^4.0.0"
+ },
+ "extensions": {
+  "uni-cloud-jql": {}
+ },
+ "cloudfunction-config": {
+  "memorySize": 256,
+  "timeout": 5,
+  "triggers": [
+   {
+    "name": "myTrigger",
+    "type": "timer",
+    "config": "0 30 10 * * 2,4,0 *"
+   }
+  ],
+  "path": "/get",
+  "runtime": "Nodejs8"
+ }
+}

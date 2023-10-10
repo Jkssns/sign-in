@@ -1,6 +1,7 @@
 <template>
 	<div class="sign_container" :class="{ signed: signed }">
 		<section>
+			 <!-- <el-button type="primary">主要按钮</el-button> -->
 			<div class="rotate_line"></div>
 
 			<h1 class="sign_title" :style="styleObj">{{ signed ? '已打卡' : '未打卡' }}</h1>
@@ -75,7 +76,8 @@ export default {
 
 	methods: {
 		getUserInfo() {
-			window.getUserInfo((userInfo) => {
+		getUserInfo() {
+			window.getUserInfo((userInfo) => {ss
 				this.userInfo = userInfo;
 			})
 		},
