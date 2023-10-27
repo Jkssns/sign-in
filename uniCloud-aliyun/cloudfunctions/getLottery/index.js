@@ -1,5 +1,6 @@
 'use strict';
 const FormData = require('form-data');
+const imgBase = require('./imgBase.js');
 exports.main = async (event, context) => {
 	// 获取彩票号码
 	const res = await uniCloud.request({
@@ -64,7 +65,7 @@ exports.main = async (event, context) => {
 	const getContent = (n1, n2) => {
 		return '### 开奖号码：' + n1 + 
 			   '\n\n### 我的号码：' + n2 + 
-			   '\n\n#### 规则![Image](https://mp-a268227e-62b2-4f41-9a02-f9379fb12ac8.cdn.bspapp.com/zhongjiang/guize.png)'; // 中奖规则
+			   `\n\n#### 规则![Image](${imgBase})`; // 中奖规则
 	}
 	
 	/*
@@ -79,9 +80,12 @@ exports.main = async (event, context) => {
 		} else {
 			continue;
 		}
+		const result = checkLottery(item.number, rightNumber);
+		// 更新数据库中奖信息
+		await collection.doc(item._id).update({ result, lotteryNumber: rightNumber });
 		// 推送中奖号码，同时告知有没有中奖
 		const form = new FormData();
-		form.append('title', checkLottery(item.number, rightNumber));
+		form.append('title', result);
 		form.append('desp', getContent(rightNumber, item.number));
 		form.append('channel', 9);
 
