@@ -60,7 +60,7 @@ exports.main = async (event, context) => {
 	const db = uniCloud.database(); // 获取云数据库的引用
 	const collection = db.collection('lottery');
 	const userCollection = await db.collection('lottery_user').get();
-	const list = await collection.orderBy('date', 'desc').limit(userCollection.data.length).get();
+	const list = await collection.orderBy('date', 'desc').limit(12).get();
 	
 	const getContent = (n1, n2) => {
 		return '### 开奖号码：' + n1 + 
@@ -75,14 +75,14 @@ exports.main = async (event, context) => {
 	*/
 	const alreadySetObj = {};
 	for (let item of list.data){
-		if (!alreadySetObj[item.belong]) {
-			alreadySetObj[item.belong] = true;
-		} else {
-			continue;
-		}
+		// if (!alreadySetObj[item.belong]) {
+		// 	alreadySetObj[item.belong] = true;
+		// } else {
+		// 	continue;
+		// }
 		const result = checkLottery(item.number, rightNumber);
 		// 更新数据库中奖信息
-		await collection.doc(item._id).update({ result, lotteryNumber: rightNumber });
+		await collection.doc(item._id).update({ result, lotteryNumber: rightNumber, dateStr: new Date().toLocaleDateString() });
 		// 推送中奖号码，同时告知有没有中奖
 		const form = new FormData();
 		form.append('title', result);
