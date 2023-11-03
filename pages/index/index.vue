@@ -76,7 +76,6 @@ export default {
 
 	methods: {
 		getUserInfo() {
-		getUserInfo() {
 			window.getUserInfo((userInfo) => {ss
 				this.userInfo = userInfo;
 			})

@@ -1,0 +1,1 @@
+{"bsonType":"object","required":[],"permission":{"read":true,"create":true,"update":true,"delete":true},"properties":{"_id":{"description":"ID，系统自动生成"},"suggestion_text":{"description":"建议文本"},"contact":{"description":"联系方式"}}}

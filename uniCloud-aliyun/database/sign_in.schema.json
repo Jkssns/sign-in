@@ -1,0 +1,1 @@
+{"bsonType":"object","required":[],"permission":{"read":false,"create":false,"update":false,"delete":false},"properties":{"_id":{"description":"ID，系统自动生成"},"user":{"description":"用户号码，系统自动生成"},"last_sign_time":{"bsonType":"int","description":"上一次签到时间"},"score":{"bsonType":"int","description":"签到天数"}}}
